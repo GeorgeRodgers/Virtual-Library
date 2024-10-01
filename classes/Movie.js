@@ -12,14 +12,21 @@ class Movie extends Media{
         this.rating = rating;
     }
     summary(){
-        return `Title: ${this.title}, Director: ${this.director}, Year: ${this.year}, Genre: ${this.genre}, Duration: ${this.genre}, Rating: ${this.rating}`
+        return `Title: ${this.title}, Director: ${this.director}, Year: ${this.year}, Genre: ${this.genre}, Rating: ${this.rating}`
     }
-    static longestMovie(movie){
-        for (let i = 0; i < movie.length; i++){
-            if (movie[i].duration === Math.max(movie.duration))
-                return movie[i];
+
+    static longestMovie(movies){
+        let movieDurations = [];
+        for (let i = 0; i < movies.length; i++){
+            movieDurations.push(movies[i].rating);
+        }
+        
+        for (let j = 0; j < movieDurations.length; j++){
+            if (movieDurations[j] == Math.max(...movieDurations)){
+                return movies[j]
+            } 
+        }
     }
-}
 }
 
 // don't change below

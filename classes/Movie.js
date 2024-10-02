@@ -37,6 +37,13 @@ class Movie extends Media{
         //     } 
         // }
     }
+    static calculateAverageRating(movies){
+        let sum = 0;
+        for(let i = 0; i < movies.length; i++){
+            sum += movies[i].rating;
+        }
+        return (sum / movies.length).toFixed(1);
+    }
 }
 
 // don't change below

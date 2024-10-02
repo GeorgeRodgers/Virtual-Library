@@ -32,6 +32,13 @@ class Book extends Media{
         //     } 
         // }
     }
+    static calculateAverageRating(books){
+        let sum = 0;
+        for(let i = 0; i < books.length; i++){
+            sum += books[i].rating;
+        }
+        return (sum / books.length).toFixed(1);
+    }
 }
 
 // don't change below

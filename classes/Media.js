@@ -2,6 +2,8 @@
 
 class Media{
 
+    static allMedia = [];
+
     static totalMediaCount = 0;
 
     constructor(title, year, genre){
@@ -9,6 +11,7 @@ class Media{
         this.year = year;
         this.genre = genre;
         Media.totalMediaCount++;
+        Media.allMedia.push(this);
     }
 
     summary(){

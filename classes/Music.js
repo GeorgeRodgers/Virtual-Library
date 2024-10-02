@@ -16,16 +16,21 @@ class Music extends Media{
     }
 
     static shortestAlbum(albums){
-        let albumLength = [];
-        for (let i = 0; i < albums.length; i++){
-            albumLength.push(albums[i].length);
-        }
+
+        let temp = [...albums];
+        temp.sort((a, b) => a.length - b.length);
+        return temp[0]
+
+        // let albumLength = [];
+        // for (let i = 0; i < albums.length; i++){
+        //     albumLength.push(albums[i].length);
+        // }
         
-        for (let j = 0; j < albumLength.length; j++){
-            if (albumLength[j] == Math.min(...albumLength)){
-                return albums[j]
-            } 
-        }
+        // for (let j = 0; j < albumLength.length; j++){
+        //     if (albumLength[j] == Math.min(...albumLength)){
+        //         return albums[j]
+        //     } 
+        // }
     }
 }
 

@@ -16,16 +16,26 @@ class Movie extends Media{
     }
 
     static longestMovie(movies){
-        let movieDurations = [];
-        for (let i = 0; i < movies.length; i++){
-            movieDurations.push(movies[i].rating);
-        }
+
+        // If we don't care about mutating the array we can use the sort function
+        // movies.sort((a, b) => b.duration - a.duration);
+        // return movies[0];
+
+        let temp = [...movies];// using the spread operator allows clone the movies array and stops mutation using this method
+        temp.sort((a, b) => b.duration - a.duration);
+        return temp[0];
+
+        // We could also use a loop to store the duration values of the from the array of objects
+        // let movieDurations = [];
+        // for (let i = 0; i < movies.length; i++){
+        //     movieDurations.push(movies[i].rating);
+        // }
         
-        for (let j = 0; j < movieDurations.length; j++){
-            if (movieDurations[j] == Math.max(...movieDurations)){
-                return movies[j]
-            } 
-        }
+        // for (let j = 0; j < movieDurations.length; j++){
+            // if (movieDurations[j] == Math.max(...movieDurations)){ //we also need to use the spread operator to use the Math.max() method on the new array
+        //         return movies[j]
+        //     } 
+        // }
     }
 }
 

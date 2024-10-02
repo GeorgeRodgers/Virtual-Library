@@ -16,16 +16,21 @@ class Book extends Media{
     }
     
     static highestRating(books){
-        let ratings = [];
-        for (let i = 0; i < books.length; i++){
-            ratings.push(books[i].rating);
-        }
+
+        let temp = [...books];
+        temp.sort((a, b) => b.rating - a.rating);
+        return temp[0]
+
+        // let ratings = [];
+        // for (let i = 0; i < books.length; i++){
+        //     ratings.push(books[i].rating);
+        // }
         
-        for (let j = 0; j < ratings.length; j++){
-            if (ratings[j] == Math.max(...ratings)){
-                return books[j]
-            } 
-        }
+        // for (let j = 0; j < ratings.length; j++){
+        //     if (ratings[j] == Math.max(...ratings)){
+        //         return books[j]
+        //     } 
+        // }
     }
 }
 

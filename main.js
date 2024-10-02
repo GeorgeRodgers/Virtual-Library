@@ -1,14 +1,7 @@
 // Import classes here to console.log and debug
 
-const Movie = require(`./classes/Movie`);
+const Podcast = require(`./classes/Podcast`);
 
-const movie1 = new Movie('Inception', 2010, 'Sci-Fi', 'Christopher Nolan', 148, 4.5);
-const movie2 = new Movie('The Godfather', 1972, 'Crime', 'Francis Ford Coppola', 175, 4.7);
+const podcast = new Podcast(`The Podcast`, 2024, `talk`, `artist`, 3600, `Ben`, `First episode`, `#001`, [`John`, `Jane`, `Jeff`]);
 
-let arr = [movie1, movie2];
-
-console.log(arr)
-
-console.log(Movie.longestMovie(arr)); // Returns movie2
-
-console.log(arr)
+console.log(podcast.listen())
